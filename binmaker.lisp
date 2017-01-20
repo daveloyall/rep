@@ -2,6 +2,7 @@
   (ql:quickload :lisp-unit)
   (ql:quickload :lisp-executable))
 
+
 (pushnew "./" asdf:*central-registry*)
 
 
@@ -11,7 +12,7 @@
       lisp-unit:*print-failures* t)
 (asdf:test-system "lisp-executable")
 (unwind-protect
-     (asdf:oos 'lisp-executable:create-executables-op "cl-rep")
+     (asdf:oos 'lisp-executable:create-executables-op "rep")
   #+:ecl (ext:quit 0)
   #+:sbcl (sb-ext:exit :code 0)
   #+:ccl (ccl::quit 0)

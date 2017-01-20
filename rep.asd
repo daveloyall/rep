@@ -3,17 +3,19 @@
   (asdf:load-system "lisp-executable"))
 
 
-(defsystem cl-rep
+(defsystem rep
   :author "Dave Loyall"
   :description "Generic REPL without the Loop"
   :license "GPLv3"
   :serial t
   :depends-on (lisp-executable
-	       donuts)
-  :components ((:module ""
+	       donuts
+	       cl-syntax-annot)
+  :components ((:module "src"
 		:serial t
-			:components ((:file "cl-rep")
-				     (lisp-executable:executable "cl-rep.image" :program ("THE-GOOD-GUYS.CL-REP" "CL-REP"))))))
+		:components ((:file "logger")
+			     (:file "rep")
+				     (lisp-executable:executable "rep.image" :program ("THE-GOOD-GUYS.REP" "REP"))))))
 
 
 
