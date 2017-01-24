@@ -10,7 +10,8 @@
   :serial t
   :depends-on (lisp-executable
 	       donuts
-	       cl-syntax-annot)
+	       cl-syntax-annot
+	       log4slime)
   :components ((:module "src"
 		:serial t
 		:components ((:file "logger")
