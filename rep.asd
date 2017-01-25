@@ -9,7 +9,6 @@
   :license "GPLv3"
   :serial t
   :depends-on (lisp-executable
-	       donuts
 	       cl-syntax-annot
 	       log4slime)
   :components ((:module "src"
